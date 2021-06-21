@@ -107,7 +107,6 @@ class StanModelGenerator:
             "   real<lower=0> Y[N];\n"
             "   int<lower=1> max_lag;\n"
             "   int<lower=1> num_media;\n"
-            "   row_vector[max_lag] lag_vec;\n"
             "   row_vector[max_lag] X_media[N, num_media];\n"
             "%s}"
         )
@@ -187,7 +186,6 @@ class StanModelGenerator:
             "   real mu[N];\n"
             "   real cum_effect;\n"
             "   row_vector[num_media] cum_effects_hill[N];\n"
-            # "   row_vector[max_lag] lag_weights;\n"
             "   for (nn in 1:N) {\n"
             "       for (media in 1 : num_media) {\n"
             "           cum_effect <- %s\n"
@@ -313,12 +311,6 @@ class StanModelGenerator:
 
         self.__model = StanModel(model_code=code, verbose=False)
 
-
-    # def create_sampler_input(self, lagged_spends: array, ctrl_vars: array):
-    #     pass
-
-    # def run_sampling(self, stan_input, ):
-    #     pass
 
     # def __plot_posterior(self, sampled_parameters: Dict):
     #     pass
