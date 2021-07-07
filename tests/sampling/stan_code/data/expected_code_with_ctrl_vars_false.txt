@@ -1,0 +1,7 @@
+data {
+    int<lower=1> N;
+    real<lower=0> Y[N];
+    int<lower=1> max_lag;
+    int<lower=1> num_media;
+    row_vector[max_lag] X_media[N, num_media];
+}
