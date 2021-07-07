@@ -1,0 +1,24 @@
+CARRYOVER_TRANSFO_NM: geo_decay
+CTRL_NMS:
+- consumer_index
+DATA_SOURCE_PATH: ./data/mmm.csv
+DATE_NM: week_dt
+DIMINUSHING_RETURNS_TRANSFO_NM: hill
+EXPERIMENT_NM: test
+MAX_LAG: 13
+MEDIA_NMS:
+- TV
+- radio
+- newspaper
+NB_TEST_OBS: 20
+NORMALIZATION:
+  PREDICTORS:
+    scaler_nm: max_abs
+    transfo_nm: log
+  TARGET:
+    scaler_nm: max_abs
+    transfo_nm: log
+PARAMETER_ESTIMATOR_NM: median
+SAMPLING_N_ITER: 100
+SAMPLING_N_PROCESSORS: 3
+TARGET_NM: sales
