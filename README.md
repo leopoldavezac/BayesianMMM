@@ -16,7 +16,7 @@ More often than not we make the hypothesis that media spends have a lasting impa
 
 The geo decay transformations allows us to model the lasting impact of marketing spends.
 
-<img src="docs/geo_decay.png"  width="500"/>
+<img src="docs/geo_decay.PNG"  width="500"/>
 
 <img src="docs/geodecay_viz.png"  width="500"/>
 
@@ -25,7 +25,7 @@ The geo decay transformations allows us to model the lasting impact of marketing
 
 The adstock transformation allow us to model the lasting impact and delayed effect of marketing spends.
 
-<img src="docs/adstock.png"  width="500"/>
+<img src="docs/adstock.PNG"  width="500"/>
 
 <img src="docs/adstock_viz.png"  width="500"/>
 
@@ -36,14 +36,14 @@ We also might want to make the hypothesis that the spends impact on sales follow
 #### Hill
 
 
-<img src="docs/hill.png"  width="500"/>
+<img src="docs/hill.PNG"  width="500"/>
 
 <img src="docs/hill_viz.png"  width="500"/>
 
 
 #### Reach
 
-<img src="docs/reach.png"  width="500"/>
+<img src="docs/reach.PNG"  width="500"/>
 
 <img src="docs/reach_viz.png"  width="500"/>
 
@@ -55,7 +55,7 @@ We also might want to make the hypothesis that the spends impact on sales follow
 Putting it all together or model can be expressed by the following formula.
 
 
-<img src="docs/model.png"  width="500"/>
+<img src="docs/model.PNG"  width="500"/>
 
 ------------
 
