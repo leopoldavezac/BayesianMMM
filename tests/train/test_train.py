@@ -48,65 +48,8 @@ def test_run(
 
     config_file_nm = "../tests/train/config/"+identifier_nm
 
-    # load config / change experiment nm / save config
-
-    # import json
-
-    # import yaml
-    # with open("./tests/train/config/"+identifier_nm+".yaml", "r") as f:
-    #     config = yaml.load(f)
-    
-    # config["EXPERIMENT_NM"] = identifier_nm
-
-    # with open("./tests/train/config/"+identifier_nm+".yaml", "w") as f:
-    #     yaml.dump(config, f)
-
-    ###
-
     with patch.object(Sampler, "run_sampling", new = (lambda x, y, z: sample)):
         run(config_file_nm)
-
-    # load config / change experiment nm / save config
-    
-    # config["EXPERIMENT_NM"] = "test"
-
-    # with open("./tests/train/config/"+identifier_nm+".yaml", "w") as f:
-    #     yaml.dump(config, f)
-
-    # import os
-    
-    # os.remove("./results/inference_machine/%s.pkl"%identifier_nm)
-    # os.remove("./results/normalizer/scaler_predictor_%s.pkl"%identifier_nm)
-    # os.remove("./results/normalizer/scaler_target_%s.pkl"%identifier_nm)
-    # os.remove("./results/normalizer/args_predictor_%s.json"%identifier_nm)
-    # os.remove("./results/normalizer/args_target_%s.json"%identifier_nm)
-    # os.remove("./results/contributions_%s.csv"%identifier_nm)
-    # os.remove("./results/plot/contribution_analysis_%s.html"%identifier_nm)
-    # os.remove("./results/plot/carryover_%s.html"%identifier_nm)
-    # os.remove("./results/plot/diminushing_returns_%s.html"%identifier_nm)
-    # os.remove("./results/plot/sample_%s.html"%identifier_nm)
-    # os.remove("./results/plot/true_vs_pred_%s.html"%identifier_nm)
-
-    # with open("./results/performance_%s.json" % identifier_nm, "r") as f:
-    #     perf = json.load(f)
-
-    # os.remove("./results/performance_%s.json" % identifier_nm)
-
-    # with open("./tests/train/results/performance_%s.json" % identifier_nm, "w") as f:
-    #     json.dump(perf, f)
-
-    # import pandas as pd
-
-    # pred_vs_true = pd.read_csv("./results/prediction_%s.csv"%identifier_nm)
-    # os.remove("./results/prediction_%s.csv" % identifier_nm)
-
-    # pred_vs_true.to_csv("./tests/train/results/prediction_%s.csv" % identifier_nm, index=False)
-
-    # print(pred_vs_true[pred_vs_true.pred.isna()])
-
-    # assert False
-
-    ##
 
     with open("./results/performance_test.json", "r") as f:
         obtained_performance = load(f)
@@ -121,11 +64,6 @@ def test_run(
     obtained_prediction = read_csv("./results/prediction_test.csv")
     expected_prediction = read_csv(
         "./tests/train/results/prediction_%s.csv" % identifier_nm
-        )
-
-    print(
-        obtained_prediction[~np.isclose(obtained_prediction.pred.values, expected_prediction.pred.values)],
-        expected_prediction[~np.isclose(obtained_prediction.pred.values, expected_prediction.pred.values)]
         )
 
     assert np.allclose(a=obtained_prediction.true.values, b=expected_prediction.true.values)
