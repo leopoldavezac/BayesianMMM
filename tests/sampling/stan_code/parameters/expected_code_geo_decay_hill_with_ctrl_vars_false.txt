@@ -1,0 +1,8 @@
+parameters {
+    real<lower=0> noise_var;
+    real<lower=0> tau;
+    vector<lower=0>[num_media] beta_medias;
+    vector<lower=0,upper=1>[num_media] retain_rate;
+    vector<lower=0, upper=1>[num_media] ec;
+    vector<lower=0>[num_media] slope;
+}

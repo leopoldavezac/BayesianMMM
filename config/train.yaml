@@ -1,0 +1,30 @@
+DATA_SOURCE_PATH: "./data/mmm.csv"
+
+EXPERIMENT_NM: "demo"
+
+MEDIA_NMS: #must be in same order as in mmm dataset
+  - TV
+  - radio
+  - newspaper
+CTRL_NMS: []
+DATE_NM: "week_dt"
+TARGET_NM: "sales"
+
+NORMALIZATION:
+  PREDICTORS:
+    transfo_nm: null
+    scaler_nm: "max_abs"
+  TARGET:
+    transfo_nm: null
+    scaler_nm: "max_abs"
+
+MAX_LAG: 13
+CARRYOVER_TRANSFO_NM: "adstock"
+DIMINUSHING_RETURNS_TRANSFO_NM: "reach"
+
+SAMPLING_N_ITER: 2000
+SAMPLING_N_PROCESSORS: 3
+
+PARAMETER_ESTIMATOR_NM: "median"
+
+NB_TEST_OBS: 20

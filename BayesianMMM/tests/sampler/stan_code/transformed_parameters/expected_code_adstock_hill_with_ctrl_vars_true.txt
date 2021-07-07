@@ -1,0 +1,14 @@
+transformed parameters {
+    real mu[N];
+    real cum_effect;
+    row_vector[num_media] cum_effects_hill[N];
+    for (nn in 1:N) {
+        for (media in 1 : num_media) {
+            cum_effect <- Adstock(X_media[nn, media], max_lag, retain_rate[media], delay[media]);
+            cum_effects_hill[nn, media] <- Hill(cum_effect, ec[media], slope[media]);
+        }
+        mu[nn] <- tau +
+        dot_product(cum_effects_hill[nn], beta_medias) +
+        dot_product(X_ctrl[nn], gamma_ctrl);
+    }
+}

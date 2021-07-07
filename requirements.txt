@@ -1,0 +1,5 @@
+numpy
+pandas
+pystan
+sklearn
+plotly

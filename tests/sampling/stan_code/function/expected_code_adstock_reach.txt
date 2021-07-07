@@ -1,0 +1,12 @@
+functions {
+    real Reach(real t, real half_saturation) {
+        return (1 - exp(-half_saturation*t)) / (1 + exp(-half_saturation*t));
+    }
+    real Adstock(row_vector t, int max_lag, real retain_rate, real delay) {
+        row_vector[max_lag] weights;
+        for (lag in 1 : max_lag) {
+            weights[lag] <- pow(retain_rate, (lag - 1 - delay) ^ 2);
+        }
+        return dot_product(t, weights) / sum(weights);
+    }
+}

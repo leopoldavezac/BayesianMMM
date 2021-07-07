@@ -1,0 +1,11 @@
+model {
+    retain_rate ~ beta(3,3);
+    delay ~ uniform(0, max_lag - 1);
+    half_saturation ~ gamma(3, 1);
+    tau ~ normal(0, 5);
+    for (media_index in 1 : num_media) {
+        beta_medias[media_index] ~ normal(0, 1);
+    }
+    noise_var ~ inv_gamma(0.05, 0.05 * 0.01);
+    Y ~ normal(mu, sqrt(noise_var));
+}
