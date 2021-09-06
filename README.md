@@ -1,6 +1,6 @@
 # BayesianMMM
 
-For years scientifics have tried to find the best way to model the relationship between media spends and revenue. Once this relationship modelled one can easily find the optimal media mix, a very valuable insight.
+For years scientists have tried to find the best way to model the relationship between media spends and revenue. Once this relationship modelled one can easily find the optimal media mix, a very valuable insight.
 
 Here we merely propose an implementation of one of the latest one: [bayesian methods for media mix modeling with carryover and shape effect](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/46001.pdf). 
 
