@@ -50,7 +50,7 @@ def test_get_normalized_contributions(
     max_lag
     ):
     param_nm_to_val = {
-        "beta_media":BETA_MEDIAS,
+        "beta_medias":BETA_MEDIAS,
         "tau":TAU
     }
     
