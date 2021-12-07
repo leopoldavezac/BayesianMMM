@@ -59,7 +59,11 @@ def test_run(
         ) as f:
         expected_performance = load(f)
 
-    assert obtained_performance == expected_performance
+    for k, v in obtained_performance.items():
+        obtained_performance[k] = round(v, 5)
+        expected_performance[k] = round(v, 5)
+
+    assert obtained_performance ==expected_performance
     
     obtained_prediction = read_csv("./results/prediction_test.csv")
     expected_prediction = read_csv(
