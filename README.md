@@ -142,6 +142,17 @@ NB_TEST_OBS: 20                         #nb of observations to use for testing
 --------------
 
 
+## Installation
+
+```bash
+
+$ conda env create -f environment.yaml
+$ conda activate bayesian_mmm
+$ pip install -e .
+
+```
+
+
 ## Further Developments
 
 Give the user the ability to:

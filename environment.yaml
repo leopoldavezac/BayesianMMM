@@ -1,0 +1,9 @@
+name: bayesian_mmm
+dependencies: 
+  - numpy
+  - pandas
+  - pystan==2.19.1.1
+  - scikit-learn
+  - plotly
+  - pyyaml
+  - pip
